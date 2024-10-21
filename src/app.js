@@ -2,6 +2,7 @@ require("dotenv").config();
 
 const express = require("express");
 const httpStatus = require("http-status");
+var cors = require('cors')
 
 const { errorHandler } = require("./middlewares/error.middleware.js");
 const ApiError = require("./utils/ApiError.js");
@@ -14,6 +15,10 @@ app.use(express.json());
 
 // parse urlencoded request body
 app.use(express.urlencoded({ extended: true }));
+
+// enable cors
+app.use(cors());
+app.options("*", cors());
 
 // Routes
 app.use("/api/tasks", router);

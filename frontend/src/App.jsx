@@ -4,7 +4,8 @@ import TaskForm from './components/TaskForm';
 import TaskList from './components/TaskList';
 import SearchBar from './components/SearchBar';
 
-const URL = 'http://localhost:8082/api/tasks';
+const URL = 'https://xoro-story.onrender.com/api/tasks';
+
 const App = () => {
   const [tasks, setTasks] = useState([]);
   const [title, setTitle] = useState('');
